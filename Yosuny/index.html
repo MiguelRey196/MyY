@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Yosuny 💛</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* =====================================================
+   PANTALLA INICIAL
+===================================================== */
+
+.inicio {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle,
+            #3b3000 0%,
+            #100e04 45%,
+            #020202 100%
+        );
+
+    color: white;
+
+    transition: 1.5s;
+}
+
+.inicio.oculto {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.inicio h1 {
+    color: #ffd83d;
+
+    font-size:
+        clamp(2rem, 8vw, 4.5rem);
+
+    text-shadow:
+        0 0 10px #ffd83d,
+        0 0 30px #ffb300,
+        0 0 60px #ff8c00;
+
+    animation: respirar 2s infinite;
+}
+
+.inicio p {
+    margin-top: 20px;
+
+    font-size:
+        clamp(1rem, 4vw, 1.3rem);
+}
+
+.boton {
+    margin-top: 35px;
+
+    padding: 16px 35px;
+
+    border-radius: 50px;
+
+    border: 2px solid #ffd83d;
+
+    background: rgba(255,216,61,.08);
+
+    color: #ffd83d;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px rgba(255,216,61,.4);
+
+    transition: .3s;
+}
+
+.boton:hover {
+    background: #ffd83d;
+    color: #111;
+    transform: scale(1.08);
+}
+
+@keyframes respirar {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+
+}
+
+/* =====================================================
+   JARDÍN
+===================================================== */
+
+.jardin {
+    position: fixed;
+    inset: 0;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #020409 0%,
+            #07101a 45%,
+            #101c08 100%
+        );
+}
+
+/* =====================================================
+   LUNA
+===================================================== */
+
+.luna {
+    position: absolute;
+
+    width:
+        clamp(65px, 14vw, 120px);
+
+    height:
+        clamp(65px, 14vw, 120px);
+
+    border-radius: 50%;
+
+    background: #fff5bd;
+
+    top: 6%;
+    right: 9%;
+
+    box-shadow:
+        0 0 25px #fff5bd,
+        0 0 70px rgba(255,235,160,.5);
+}
+
+/* =====================================================
+   ESTRELLAS
+===================================================== */
+
+.estrella {
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 8px white;
+
+    animation:
+        brillo 2s infinite alternate;
+}
+
+@keyframes brillo {
+
+    from {
+        opacity: .2;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+/* =====================================================
+   MENSAJE
+===================================================== */
+
+.mensaje {
+    position: absolute;
+
+    top: 6%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+
+    text-align: center;
+
+    z-index: 500;
+
+    opacity: 0;
+
+    animation:
+        aparecerMensaje 2s 3s forwards;
+}
+
+.mensaje h2 {
+
+    font-size:
+        clamp(1.8rem, 6vw, 3.5rem);
+
+    color: #ffd83d;
+
+    text-shadow:
+        0 0 10px #ffd83d,
+        0 0 30px #ff9800;
+
+}
+
+.mensaje p {
+
+    margin-top: 8px;
+
+    color: white;
+
+    font-size:
+        clamp(.9rem, 3vw, 1.2rem);
+
+}
+
+@keyframes aparecerMensaje {
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+/* =====================================================
+   FLOR
+===================================================== */
+
+.flor {
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    transform:
+        translate(-50%, 50%)
+        scale(.75);
+
+    opacity: 0;
+
+    animation:
+        aparecerFlor 1.8s ease-out forwards;
+
+}
+
+@keyframes aparecerFlor {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, 50%)
+            scale(.05);
+    }
+
+    70% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, 50%)
+            scale(.82);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, 50%)
+            scale(.75);
+    }
+
+}
+
+/* =====================================================
+   PALABRAS
+===================================================== */
+
+.palabra {
+
+    position: absolute;
+
+    white-space: nowrap;
+
+    font-weight: bold;
+
+    font-size: 13px;
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        scale(.2);
+
+    animation:
+        formarPalabra .65s ease-out forwards;
+
+}
+
+.flor.yosuny .palabra {
+
+    color: #ffd21f;
+
+    text-shadow:
+        0 0 5px #ffd21f,
+        0 0 12px #ffae00;
+
+}
+
+.flor.teamo .palabra {
+
+    color: #ff6880;
+
+    text-shadow:
+        0 0 5px #ff3657,
+        0 0 12px #ff1744;
+
+}
+
+@keyframes formarPalabra {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.1);
+
+    }
+
+    70% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.15);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+    }
+
+}
+
+/* =====================================================
+   CENTRO
+===================================================== */
+
+.centro {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: 72px;
+    height: 72px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    font-weight: bold;
+
+    font-size: 11px;
+
+    z-index: 50;
+
+    opacity: 0;
+
+    animation:
+        aparecerCentro 1s 3s forwards;
+
+}
+
+.flor.yosuny .centro {
+
+    color: #ffd83d;
+
+    background:
+        radial-gradient(
+            circle,
+            #8c5a00,
+            #392200
+        );
+
+    box-shadow:
+        0 0 15px #ffc400,
+        0 0 35px rgba(255,190,0,.5);
+
+}
+
+.flor.teamo .centro {
+
+    color: #ff9baa;
+
+    background:
+        radial-gradient(
+            circle,
+            #8c1730,
+            #350713
+        );
+
+    box-shadow:
+        0 0 15px #ff4965,
+        0 0 35px rgba(255,40,70,.5);
+
+}
+
+@keyframes aparecerCentro {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+}
+
+/* =====================================================
+   TALLO
+===================================================== */
+
+.tallo {
+
+    position: absolute;
+
+    left: 50%;
+    top: 62%;
+
+    width: 6px;
+    height: 130px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            to right,
+            #235a12,
+            #5da32a,
+            #235a12
+        );
+
+    border-radius: 10px;
+
+}
+
+/* =====================================================
+   HOJAS
+===================================================== */
+
+.hoja {
+
+    position: absolute;
+
+    width: 60px;
+    height: 25px;
+
+    background: #3d861e;
+
+    border-radius:
+        100% 0 100% 0;
+
+}
+
+.hoja.uno {
+
+    left: 18%;
+    top: 72%;
+
+    transform:
+        rotate(25deg);
+
+}
+
+.hoja.dos {
+
+    right: 13%;
+    top: 76%;
+
+    transform:
+        scaleX(-1)
+        rotate(25deg);
+
+}
+
+/* =====================================================
+   CORAZONES
+===================================================== */
+
+.corazon {
+
+    position: absolute;
+
+    bottom: -50px;
+
+    z-index: 1000;
+
+    pointer-events: none;
+
+    animation:
+        subirCorazon linear forwards;
+
+    filter:
+        drop-shadow(0 0 7px currentColor);
+
+}
+
+@keyframes subirCorazon {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(0)
+            scale(.5)
+            rotate(0deg);
+
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+
+        transform:
+            translateY(-50vh)
+            scale(1)
+            rotate(15deg);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translateY(-115vh)
+            scale(1.5)
+            rotate(-20deg);
+
+    }
+
+}
+
+/* =====================================================
+   SUELO
+===================================================== */
+
+.suelo {
+
+    position: absolute;
+
+    bottom: 0;
+
+    width: 100%;
+    height: 18%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #152a08,
+            #071000
+        );
+
+    border-top:
+        2px solid #294514;
+
+}
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .flor {
+
+        width: 300px;
+        height: 300px;
+
+        transform:
+            translate(-50%, 50%)
+            scale(.58);
+
+    }
+
+    .palabra {
+
+        font-size: 12px;
+
+    }
+
+    .centro {
+
+        width: 65px;
+        height: 65px;
+
+        font-size: 10px;
+
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- =====================================================
+     INICIO
+===================================================== -->
+
+<div
+    class="inicio"
+    id="inicio"
+    onclick="comenzar()"
+>
+
+    <h1>
+        Siempre Pensando en ti 💛
+    </h1>
+
+    <p>
+        Hecho con todo mi amor...
+    </p>
+
+    <button class="boton">
+        Abrir 
+    </button>
+
+</div>
+
+
+<!-- =====================================================
+     JARDÍN
+===================================================== -->
+
+<div
+    class="jardin"
+    id="jardin"
+>
+
+    <div class="luna"></div>
+
+    <div class="mensaje">
+
+        <h2>
+            Para Yosuny 💛
+        </h2>
+
+        <p>
+            Eres muy ESPECIAL ❤️
+        </p>
+        
+
+
+    </div>
+
+    <div class="suelo"></div>
+
+</div>
+
+
+<script>
+
+const jardin =
+    document.getElementById("jardin");
+
+const inicio =
+    document.getElementById("inicio");
+
+let iniciado = false;
+
+
+/* =====================================================
+   COMENZAR
+===================================================== */
+
+function comenzar() {
+
+    if (iniciado) return;
+
+    iniciado = true;
+
+    inicio.classList.add("oculto");
+
+    crearEstrellas();
+
+    const celular =
+        window.innerWidth <= 600;
+
+
+    /*
+       En PC:
+       6 flores.
+
+       En celular:
+       3 flores para
+       mantenerlas grandes.
+    */
+
+    const cantidad =
+        celular ? 3 : 5;
+
+
+    for (
+        let i = 0;
+        i < cantidad;
+        i++
+    ) {
+
+        setTimeout(
+            () => crearFlor(i),
+            600 + i * 1500
+        );
+
+    }
+
+
+    /*
+       Corazones
+    */
+
+    for (
+        let i = 0;
+        i < 10;
+        i++
+    ) {
+
+        setTimeout(
+            crearCorazon,
+            i * 250
+        );
+
+    }
+
+    setInterval(
+        crearCorazon,
+        500
+    );
+
+}
+
+
+/* =====================================================
+   ESTRELLAS
+===================================================== */
+
+function crearEstrellas() {
+
+    for (
+        let i = 0;
+        i < 70;
+        i++
+    ) {
+
+        const estrella =
+            document.createElement("div");
+
+        estrella.className =
+            "estrella";
+
+        estrella.style.left =
+            Math.random() * 100 + "%";
+
+        estrella.style.top =
+            Math.random() * 65 + "%";
+
+        estrella.style.animationDelay =
+            Math.random() * 3 + "s";
+
+        jardin.appendChild(
+            estrella
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CREAR FLOR
+===================================================== */
+
+function crearFlor(numero) {
+
+    const flor =
+        document.createElement("div");
+
+
+    /*
+       Alternamos las flores.
+    */
+
+    const esYosuny =
+        numero % 2 === 0;
+
+
+    flor.className =
+        "flor " +
+        (
+            esYosuny
+                ? "yosuny"
+                : "teamo"
+        );
+
+
+    /*
+       Posiciones.
+    */
+
+    let posiciones;
+
+
+    if (window.innerWidth <= 600) {
+
+        posiciones = [
+            22,
+            78,
+            50
+        ];
+
+    } else {
+
+        posiciones = [
+            12,
+            32,
+            52,
+            72,
+            90,
+            22
+        ];
+
+    }
+
+
+    flor.style.left =
+        posiciones[
+            numero %
+            posiciones.length
+        ] + "%";
+
+
+    flor.style.bottom =
+        (
+            14 +
+            Math.random() * 4
+        ) + "%";
+
+
+    /*
+       Elementos de la flor.
+    */
+
+    flor.innerHTML = `
+
+        <div class="tallo"></div>
+
+        <div class="hoja uno"></div>
+
+        <div class="hoja dos"></div>
+
+        <div class="centro">
+       </div>
+
+    `;
+
+
+    jardin.appendChild(flor);
+
+
+    /*
+       Ahora dibujamos
+       los pétalos con palabras.
+    */
+
+    dibujarPetalos(
+        flor,
+        esYosuny
+            ? "Yosuny"
+            : "Teamo"
+    );
+
+}
+
+
+/* =====================================================
+   DIBUJAR PÉTALOS
+===================================================== */
+
+function dibujarPetalos(
+    flor,
+    texto
+) {
+
+    /*
+       5 pétalos.
+    */
+
+    const numeroPetalos = 6;
+
+
+    /*
+       Cada pétalo tiene
+       varias líneas de palabras.
+    */
+
+    let contador = 0;
+
+
+    for (
+        let petalo = 0;
+        petalo < numeroPetalos;
+        petalo++
+    ) {
+
+
+        /*
+           Ángulo del pétalo.
+        */
+
+        const angulo =
+            (
+                petalo *
+                (360 / numeroPetalos)
+            ) *
+            Math.PI / 180;
+
+
+        /*
+           Varias palabras
+           desde el centro
+           hacia afuera.
+        */
+
+        for (
+            let fila = 0;
+            fila < 9;
+            fila++
+        ) {
+
+            /*
+               Ancho máximo
+               del pétalo.
+
+               Esto crea la forma
+               de lágrima.
+            */
+
+            const ancho =
+                Math.sin(
+                    (fila / 8) *
+                    Math.PI
+                ) * 65;
+
+
+            /*
+               Varias palabras
+               a través del ancho.
+            */
+
+            const palabrasFila =
+                Math.max(
+                    1,
+                    Math.floor(
+                        ancho / 18
+                    )
+                );
+
+
+            for (
+                let columna = 0;
+                columna < palabrasFila;
+                columna++
+            ) {
+
+                const palabra =
+                    document.createElement("span");
+
+                palabra.className =
+                    "palabra";
+
+                palabra.textContent =
+                    texto;
+
+
+                /*
+                   Distancia desde
+                   el centro.
+                */
+
+                const distancia =
+                    25 +
+                    fila * 13;
+
+
+                /*
+                   Posición lateral
+                   dentro del pétalo.
+                */
+
+                let lateral = 0;
+
+                if (palabrasFila > 1) {
+
+                    lateral =
+                        (
+                            columna -
+                            (palabrasFila - 1) / 2
+                        ) * 18;
+
+                }
+
+
+                /*
+                   Convertimos las
+                   coordenadas del pétalo
+                   a coordenadas de la flor.
+                */
+
+                const x =
+                    180 +
+                    Math.cos(angulo) *
+                    distancia +
+                    Math.cos(
+                        angulo + Math.PI / 2
+                    ) *
+                    lateral;
+
+
+                const y =
+                    180 +
+                    Math.sin(angulo) *
+                    distancia +
+                    Math.sin(
+                        angulo + Math.PI / 2
+                    ) *
+                    lateral;
+
+
+                palabra.style.left =
+                    x + "px";
+
+                palabra.style.top =
+                    y + "px";
+
+
+                /*
+                   Retraso progresivo.
+                */
+
+                palabra.style.animationDelay =
+                    (
+                        contador * 0.025
+                    ) + "s";
+
+
+                flor.appendChild(
+                    palabra
+                );
+
+
+                contador++;
+
+            }
+
+        }
+
+    }
+
+}
+
+
+/* =====================================================
+   CORAZONES
+===================================================== */
+
+function crearCorazon() {
+
+    const corazon =
+        document.createElement("div");
+
+    corazon.className =
+        "corazon";
+
+
+    const corazones = [
+        "❤️",
+        "💛",
+        "💕",
+        "💗",
+        "💖"
+    ];
+
+
+    corazon.textContent =
+        corazones[
+            Math.floor(
+                Math.random() *
+                corazones.length
+            )
+        ];
+
+
+    corazon.style.left =
+        Math.random() * 100 + "%";
+
+
+    corazon.style.fontSize =
+        (
+            15 +
+            Math.random() * 25
+        ) + "px";
+
+
+    const duracion =
+        4 +
+        Math.random() * 5;
+
+
+    corazon.style.animationDuration =
+        duracion + "s";
+
+
+    jardin.appendChild(
+        corazon
+    );
+
+
+    setTimeout(
+        () => corazon.remove(),
+        duracion * 1000
+    );
+
+}
+
+</script>
+
+</body>
+</html>
